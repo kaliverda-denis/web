@@ -1,13 +1,13 @@
-<h1>Рецепты</h1>
-<a href="{% url 'add_recipe' %}">Добавить рецепт</a>
+<h1>Рецепти</h1>
+<a href="{% url 'add_recipe' %}">Додати рецепт</a>
 <ul>
 {% for recipe in recipes %}
     <li>
         <strong>{{ recipe.name }}</strong>: {{ recipe.ingredients }}
-        [<a href="{% url 'edit_recipe' recipe.pk %}">Редактировать</a>]
-        [<a href="{% url 'delete_recipe' recipe.pk %}">Удалить</a>]
+        [<a href="{% url 'edit_recipe' recipe.pk %}">Редагувати</a>]
+        [<a href="{% url 'delete_recipe' recipe.pk %}">Видалити</a>]
     </li>
 {% empty %}
-    <li>Рецептов пока нет.</li>
+    <li>Рецептів поки немає.</li>
 {% endfor %}
 </ul>
