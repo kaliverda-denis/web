@@ -1,6 +1,0 @@
-<h1>Видалити рецепт: {{ recipe.name }}?</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Видалити</button>
-</form>
-<a href="{% url 'home' %}">Скасувати</a>

@@ -1,13 +1,19 @@
 <h1>Рецепти</h1>
-<a href="{% url 'add_recipe' %}">Додати рецепт</a>
+
+{% if user.is_authenticated %}
+    Привіт, {{ user.username }}!
+    <a href="/accounts/logout/">Вийти</a>
+    <a href="/add/">Додати рецепт</a>
+{% else %}
+    <a href="/accounts/login/">Увійти</a>
+{% endif %}
+
 <ul>
 {% for recipe in recipes %}
     <li>
-        <strong>{{ recipe.name }}</strong>: {{ recipe.ingredients }}
-        [<a href="{% url 'edit_recipe' recipe.pk %}">Редагувати</a>]
-        [<a href="{% url 'delete_recipe' recipe.pk %}">Видалити</a>]
+        {{ recipe.name }} — {{ recipe.ingredients }}
+        <a href="/edit/{{ recipe.id }}/">Редагувати</a>
+        <a href="/delete/{{ recipe.id }}/">Видалити</a>
     </li>
-{% empty %}
-    <li>Рецептів поки немає.</li>
 {% endfor %}
 </ul>

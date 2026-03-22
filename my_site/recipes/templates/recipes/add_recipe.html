@@ -1,7 +1,0 @@
-<h1>{% if form.instance.pk %}Додати{% endif %} рецепт</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Зберегти</button>
-</form>
-<a href="{% url 'home' %}">Назад</a>
