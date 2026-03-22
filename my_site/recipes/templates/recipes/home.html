@@ -2,7 +2,11 @@
 
 {% if user.is_authenticated %}
     Привіт, {{ user.username }}!
-    <a href="/accounts/logout/">Вийти</a>
+    <form action="/accounts/logout/" method="post">
+    {% csrf_token %}
+    <button type="submit">Вийти</button>
+</form>
+
     <a href="/add/">Додати рецепт</a>
 {% else %}
     <a href="/accounts/login/">Увійти</a>
