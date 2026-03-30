@@ -1,3 +1,7 @@
+{% extends 'registration/reg_base.html' %}
+{% block title %}Вхід - Рецепти{% endblock %}
+
+{% block content %}
 <h2>Вхід</h2>
 
 <form method="post">
@@ -5,3 +9,7 @@
     {{ form.as_p }}
     <button type="submit">Увійти</button>
 </form>
+</body>
+</html>
+
+{% endblock %}

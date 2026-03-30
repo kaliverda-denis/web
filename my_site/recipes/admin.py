@@ -3,3 +3,4 @@ from .models import Recipe
 
 admin.site.register(Recipe)
 # Register your models here.
+# shift alt f - roformat code

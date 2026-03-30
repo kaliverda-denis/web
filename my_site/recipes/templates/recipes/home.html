@@ -1,10 +1,15 @@
-<h1>Рецепти</h1>
+{% extends 'base.html' %}
+
+{% block title %}Головна - Рецепти{% endblock %}
+
+{% block content %}
+<h1 id="recipes" class="title">Рецепти</h1>
 
 {% if user.is_authenticated %}
     Привіт, {{ user.username }}!
     <form action="/accounts/logout/" method="post">
     {% csrf_token %}
-    <button type="submit">Вийти</button>
+    <button class="title" type="submit">Вийти</button>
 </form>
 
     <a href="/add/">Додати рецепт</a>
@@ -21,3 +26,5 @@
     </li>
 {% endfor %}
 </ul>
+
+{% endblock %}

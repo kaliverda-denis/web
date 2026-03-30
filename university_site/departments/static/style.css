@@ -1,0 +1,15 @@
+body {
+    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: darkblue;
+}
+
+li {
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}

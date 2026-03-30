@@ -1,0 +1,21 @@
+{% extends 'departments/base.html' %}
+
+{% block content %}
+
+<h2>Кафедри</h2>
+<ul>
+{% for dept in departments %}
+    <li>{{ dept.name }}</li>
+{% endfor %}
+</ul>
+
+<h2>Інструктори</h2>
+<ul>
+{% for inst in instructors %}
+    <li>
+        {{ inst.user.username }} ({{ inst.department.name }})
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
